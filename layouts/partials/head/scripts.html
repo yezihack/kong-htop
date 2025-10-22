@@ -1,0 +1,68 @@
+{{/* Personal/custom script for light/dark mode and tabs */}}
+{{ $js := slice
+      (resources.Get "js/light_dark.js")
+      (resources.Get "js/tabs.js") }}
+
+{{/* Locally hosted code for KaTeX */}}
+{{ $js = $js | append
+      (resources.Get "js/lib/katex.js")
+      (resources.Get "js/lib/auto-render.js") }}
+
+{{/* Personal/custom scripts for KaTeX */}}
+{{ $js = $js | append (resources.Get "js/katex.js") }}
+
+{{/* Personal/custom scripts for table of contents */}}
+{{ if not .Site.Params.hideToc }}
+    {{ $js = $js | append (resources.Get "js/toc.js") }}
+{{ end }}
+
+{{/* Personal/custom scripts for codeblocks */}}
+{{ $js = $js | append (resources.Get "js/codeblock.js") }}
+
+{{/* 新增: 返回顶部按钮功能 */}}
+{{ $js = $js | append (resources.Get "js/back_to_top.js") }}
+
+{{/* 新增: 全局搜索快捷键 */}}
+{{ $js = $js | append (resources.Get "js/global_search_shortcut.js") }}
+
+{{/* 新增: 随机访问文章功能 */}}
+{{ $js = $js | append (resources.Get "js/random-post.js") }}
+
+{{/* 新增: 搜索功能 - 仅在搜索页面加载 */}}
+{{ if eq .Type "search" }}
+    {{ $js = $js | append (resources.Get "js/search.js") }}
+{{ end }}
+
+{{ $js_bundle := $js | resources.Concat "js/bundle.js" | minify | fingerprint }}
+
+<script defer language="javascript" type="text/javascript" src="{{ $js_bundle.RelPermalink }}"></script>
+
+{{/* Fuse.js CDN - 仅在搜索页面加载 */}}
+{{ if eq .Type "search" }}
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+{{ end }}
+
+
+{{ if .Site.Params.plausible }}
+<script defer data-domain="{{ .Site.Params.plausible_domain }}" src="{{ .Site.Params.plausible_script }}"></script>
+{{ end -}}
+
+{{ if hugo.IsProduction -}}
+  {{ template "_internal/google_analytics.html" . -}}
+{{ end -}}
+
+{{ if .Site.Params.baidu_analytics }}
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?{{ .Site.Params.baidu_analytics }}";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+{{ end -}}
+
+{{/* 不蒜子（Busuanzi）访问统计 */}}
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+

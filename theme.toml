@@ -1,0 +1,19 @@
+name = "Kong-Htop"
+license = "GPL-3.0 License"
+licenselink = "https://github.com/yezihack/kong-htop/blob/main/LICENSE"
+description = "A modern, elegant Hugo theme with glassmorphism design. Built on Poison with extensive customizations including tagscloud, timeline posts, modern article pages, and comprehensive dark mode support."
+homepage = "https://github.com/yezihack/kong-htop"
+demosite = "https://yezihack.github.io"
+tags = ["blog", "personal", "dark", "dark-mode", "light", "minimal", "glassmorphism", "modern", "responsive"]
+features = ["blog", "katex", "table-of-contents", "tabs", "dark-mode", "series", "search", "tag-cloud", "timeline-posts", "responsive"]
+min_version = "0.101.0"
+
+[author]
+    name = "Yezihack"
+    homepage = "https://github.com/yezihack"
+
+# If Porting existing theme
+[original]
+    author = "Luke Orth"
+    homepage = "https://lukeorth.com"
+    repo = "https://www.github.com/lukeorth/poison"

@@ -1,0 +1,15 @@
+{{ define "main" -}}
+<div class="post">
+  {{ partial "post/info.html" . }}
+  {{ .Content }}
+  {{ partial "post/navigation.html" . }}
+  {{ if or (.Site.Params.remark42) (.Site.DisqusShortname) }}
+    {{ partial "post/comments.html" . }}
+  {{ end }}
+</div>
+{{- end }}
+{{ define "sidebar" }}
+  {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
+    {{ partial "table_of_contents.html" . }}
+  {{ end }}
+{{ end }}

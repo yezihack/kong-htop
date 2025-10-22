@@ -1,0 +1,71 @@
+baseURL = 'https://example.com/'
+languageCode = 'en-us'
+title = "Kong-Htop Example"
+theme = "../.."
+paginate = 10
+pluralizelisttitles = false
+
+[Author]
+name = "Your Name"
+
+[params]
+    title = "Kong-Htop Example"
+    brand = "Kong-Htop"
+    brand_image = "/images/logo.png"
+    og_image = "/images/og-image.png"
+    publisher_icon = "/images/favicon.png"
+    favicon = "/images/favicon.png"
+    description = "A beautiful blog powered by Kong-Htop theme"
+    dark_mode = true
+    mainSections = ["posts"]
+
+    menu = [
+        {Name = "About", URL = "/about/", HasChildren = false},
+        {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
+        {Name = "Categories", URL = "/categories/", HasChildren = false},
+        {Name = "Tags", URL = "/tags/", HasChildren = false},
+    ]
+
+    rss_icon = true
+    rss_section = "posts"
+
+    # Sidebar colors
+    sidebar_bg_color = "#202020"
+    sidebar_img_border_color = "#515151"
+    sidebar_p_color = "#909090"
+    sidebar_h1_color = "#FFF"
+    sidebar_a_color = "#FFF"
+    sidebar_socials_color = "#FFF"
+    moon_sun_color = "#FFF"
+    moon_sun_background_color = "#515151"
+
+    # Light mode
+    text_color = "#222"
+    content_bg_color = "#FAF9F6"
+    post_title_color = "#303030"
+    list_color = "#5a5a5a"
+    link_color = "#268bd2"
+    date_color = "#515151"
+    table_border_color = "#E5E5E5"
+    table_stripe_color = "#F9F9F9"
+
+    # Dark mode
+    text_color_dark = "#eee"
+    content_bg_color_dark = "#121212"
+    post_title_color_dark = "#DBE2E9"
+    list_color_dark = "#9d9d9d"
+    link_color_dark = "#268bd2"
+    date_color_dark = "#9a9a9a"
+    table_border_color_dark = "#515151"
+    table_stripe_color_dark = "#202020"
+
+[params.meta]
+    favicon = true
+
+[taxonomies]
+    series = 'series'
+    tags = 'tags'
+    categories = 'categories'
+
+[outputs]
+    home = ["HTML", "RSS", "JSON"]

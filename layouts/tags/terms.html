@@ -1,0 +1,55 @@
+{{ define "main" -}}
+<div class="taxonomy-cloud">
+    <h1 class="taxonomy-title">{{ .Title }}</h1>
+
+    <p class="taxonomy-description">
+        共 <span class="taxonomy-count">{{ len .Data.Terms }}</span> 个标签，
+        <span class="taxonomy-count">{{ len .Site.RegularPages }}</span> 篇文章
+    </p>
+
+    <div class="tag-cloud-container">
+        {{ $maxCount := 0 }}
+        {{ $minCount := 999999 }}
+
+        <!-- 计算最大和最小文章数 -->
+        {{ range $name, $taxonomy := .Data.Terms }}
+            {{ $count := len $taxonomy.Pages }}
+            {{ if gt $count $maxCount }}
+                {{ $maxCount = $count }}
+            {{ end }}
+            {{ if lt $count $minCount }}
+                {{ $minCount = $count }}
+            {{ end }}
+        {{ end }}
+
+        <!-- 显示所有标签 -->
+        {{ range .Data.Terms.Alphabetical }}
+            {{ $count := .Count }}
+            {{ $name := .Page.Title }}
+
+            <!-- 计算权重：根据文章数量计算字体大小 -->
+            {{ $weight := 1.0 }}
+            {{ if gt $maxCount $minCount }}
+                {{ $weight = div (sub $count $minCount | float) (sub $maxCount $minCount | float) }}
+            {{ end }}
+
+            <!-- 字体大小范围：0.85em - 2em -->
+            {{ $fontSize := add 0.85 (mul $weight 1.15) }}
+
+            <!-- 计算颜色深度 -->
+            {{ $colorWeight := mul $weight 100 | int }}
+
+            <a href="{{ .Page.Permalink }}"
+               class="tag-cloud-item"
+               style="font-size: {{ $fontSize }}em"
+               data-count="{{ $count }}"
+               data-weight="{{ $colorWeight }}"
+               title="{{ $name }} ({{ $count }} 篇文章)">
+                <span class="tag-name">{{ $name }}</span>
+                <span class="tag-count">{{ $count }}</span>
+            </a>
+        {{ end }}
+    </div>
+</div>
+{{- end }}
+

@@ -1,0 +1,54 @@
+{{ define "main" -}}
+<div class="search-page">
+    <div class="search-header">
+        <h1 class="search-title">搜索文章</h1>
+        <p class="search-description">输入关键词搜索文章标题、内容、标签</p>
+    </div>
+
+    <div class="search-container">
+        <div class="search-input-wrapper">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" preserveAspectRatio="xMidYMid meet">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input
+                type="text"
+                id="search-input"
+                class="search-input"
+                placeholder="搜索文章..."
+                autocomplete="off"
+                autofocus
+            />
+            <button id="clear-search" class="clear-search" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div id="search-stats" class="search-stats" style="display: none;"></div>
+
+        <div id="search-results" class="search-results"></div>
+
+        <div id="search-empty" class="search-empty" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <p>没有找到相关文章</p>
+            <small>试试其他关键词吧</small>
+        </div>
+
+        <div id="search-placeholder" class="search-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <p>开始搜索</p>
+            <small>支持搜索标题、内容、标签和分类</small>
+        </div>
+    </div>
+</div>
+{{- end }}
+

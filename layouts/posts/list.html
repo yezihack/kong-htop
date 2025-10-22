@@ -1,0 +1,48 @@
+{{ define "main" -}}
+<div class="posts-timeline">
+    <h1 class="posts-title">{{ .Title }}</h1>
+
+    <p class="posts-description">
+        共 <span class="posts-count">{{ len .Pages }}</span> 篇文章
+    </p>
+
+    <!-- 按年份分组显示文章 -->
+    {{ range .Pages.GroupByDate "2006" }}
+        {{ $year := .Key }}
+        {{ $yearPages := .Pages }}
+        {{ $count := len $yearPages }}
+
+        <div class="year-section" data-year="{{ $year }}">
+            <!-- 年份标题 -->
+            <div class="year-header">
+                <h2 class="year-title">{{ $year }}</h2>
+                <span class="year-count">{{ $count }} 篇</span>
+            </div>
+
+            <!-- 该年份的文章列表 - 紧凑列表 -->
+            <ul class="posts-list">
+                {{ range $yearPages }}
+                    <li class="post-item">
+                        <a href="{{ .RelPermalink }}" class="post-item-link">
+                            <!-- 日期 -->
+                            <div class="post-date">{{ .Date.Format "01-02" }}</div>
+
+                            <div class="post-title">{{ .Title }}</div>
+
+                            <div class="post-meta">
+                                <!-- 标签 -->
+                                {{ if .Params.tags }}
+                                    {{ range first 3 .Params.tags }}
+                                        <span class="post-tag">{{ . }}</span>
+                                    {{ end }}
+                                {{ end }}
+                            </div>
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
+</div>
+{{- end }}
+
