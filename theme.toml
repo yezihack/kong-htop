@@ -15,5 +15,5 @@ min_version = "0.101.0"
 # If Porting existing theme
 [original]
     author = "Luke Orth"
-    homepage = "https://lukeorth.com"
+    homepage = "https://poison.lukeorth.com/"
     repo = "https://www.github.com/lukeorth/poison"

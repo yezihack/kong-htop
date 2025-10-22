@@ -3,30 +3,33 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Hugo](https://img.shields.io/badge/Hugo-0.101.0+-179BD7?style=flat&logo=hugo)](https://gohugo.io)
 
-> 一个优雅现代的 Hugo 主题，采用毛玻璃设计，基于 Poison 主题深度定制。
+**[English](./README.md) | [简体中文](./README.cn.md)**
+
+> An elegant and modern Hugo theme featuring glassmorphism design, deeply customized based on the Poison theme.
 
 ![Kong-Htop Theme](https://cdn.jsdelivr.net/gh/yezihack/assets/b/20251022154715.png)
 
-## ✨ 特性
+## ✨ Features
 
-- 🎨 **现代毛玻璃设计** - glassmorphism UI 设计风格
-- 🌓 **完全暗色模式支持** - 自动切换，深度适配
-- 📱 **响应式设计** - 完美支持桌面、平板、手机
-- 🏷️ **标签云** - 现代化标签和分类页面
-- 📝 **文章时间线** - 按年份分组的紧凑列表
-- 🔍 **搜索功能** - 全文本地搜索（JSON-based）
-- 📚 **目录导航** - 自动生成文章目录侧栏
-- 🎯 **系列文章** - 支持文章系列管理
-- 🔢 **文章统计** - 阅读次数、访问量等
-- ⚡ **高性能** - GPU 加速动画，优化的 CSS 选择器
-- 📖 **KaTeX 支持** - 数学公式渲染
-- 💬 **代码块增强** - 一键复制、行号显示
+- 🎨 **Modern Glassmorphism Design** - glassmorphism UI design style
+- 🌓 **Full Dark Mode Support** - automatic switching with deep adaptation
+- 📱 **Responsive Design** - perfect support for desktop, tablet, and mobile
+- 🏷️ **Tag Cloud** - modern tags and category pages
+- 📝 **Article Timeline** - compact list grouped by year
+- 🔍 **Search Function** - full-text local search (JSON-based)
+- 📚 **Table of Contents** - automatically generated article sidebar navigation
+- 🎲 **Random Articles** - randomly display articles
+- 🎯 **Series Articles** - support for article series management
+- 🔢 **Article Statistics** - view counts, traffic stats, etc.
+- ⚡ **High Performance** - GPU-accelerated animations, optimized CSS selectors
+- 📖 **KaTeX Support** - mathematical formula rendering
+- 💬 **Code Block Enhancements** - one-click copy, line numbers display
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 安装主题
+### Install Theme
 
-#### 方式 1: 作为 Git 子模块（推荐）
+#### Method 1: As a Git Submodule (Recommended)
 
 ```bash
 git clone https://github.com/your-blog/my-blog.git
@@ -34,7 +37,7 @@ cd my-blog
 git submodule add https://github.com/yezihack/kong-htop.git themes/kong-htop
 ```
 
-#### 方式 2: 直接克隆
+#### Method 2: Direct Clone
 
 ```bash
 git clone https://github.com/your-blog/my-blog.git
@@ -42,35 +45,35 @@ cd my-blog
 git clone https://github.com/yezihack/kong-htop.git themes/kong-htop
 ```
 
-#### 方式 3: 下载压缩包
+#### Method 3: Download ZIP
 
-从 [Releases](https://github.com/yezihack/kong-htop/releases) 下载最新版本，解压到 `themes/kong-htop` 目录。
+Download the latest version from [Releases](https://github.com/yezihack/kong-htop/releases) and extract it to the `themes/kong-htop` directory.
 
-### 配置 Hugo
+### Configure Hugo
 
-更新您的 `hugo.toml` 文件：
+Update your `hugo.toml` file:
 
 ```toml
 theme = "kong-htop"
 ```
 
-### 快速配置
+### Quick Configuration
 
-复制示例配置：
+Copy the example configuration:
 
 ```bash
 cp themes/kong-htop/exampleSite/hugo.toml ./
 ```
 
-然后根据您的需求修改配置文件。
+Then modify the configuration file according to your needs.
 
-## 📋 配置说明
+## 📋 Configuration Guide
 
-### 基础配置
+### Basic Configuration
 
 ```toml
 baseURL = 'https://your-site.com/'
-languageCode = 'zh-cn'
+languageCode = 'en'
 title = "Your Blog Title"
 theme = "kong-htop"
 paginate = 10
@@ -79,27 +82,27 @@ paginate = 10
 name = "Your Name"
 ```
 
-### 站点参数
+### Site Parameters
 
 ```toml
 [params]
-    # 品牌设置
+    # Branding settings
     title = "Your Blog Title"
     brand = "Brand Name"
     brand_image = "/images/logo.png"
     og_image = "/images/og-image.png"
     favicon = "/images/favicon.png"
     
-    # 站点描述
+    # Site description
     description = "Your site description"
     
-    # 深色模式
+    # Dark mode
     dark_mode = true
     
-    # 主要内容分类
+    # Main content sections
     mainSections = ["posts"]
     
-    # 菜单配置
+    # Menu configuration
     menu = [
         {Name = "About", URL = "/about/", HasChildren = false},
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
@@ -107,56 +110,56 @@ name = "Your Name"
         {Name = "Tags", URL = "/tags/", HasChildren = false},
     ]
     
-    # RSS 配置
+    # RSS configuration
     rss_icon = true
     rss_section = "posts"
 ```
 
-### 颜色自定义
+### Color Customization
 
-#### 侧边栏颜色
-
-```toml
-[params]
-    sidebar_bg_color = "#202020"           # 背景色
-    sidebar_img_border_color = "#515151"   # 头像边框色
-    sidebar_p_color = "#909090"            # 描述文本色
-    sidebar_h1_color = "#FFF"              # 标题色
-    sidebar_a_color = "#FFF"               # 链接色
-    sidebar_socials_color = "#FFF"         # 社交图标色
-    moon_sun_color = "#FFF"                # 深浅切换按钮颜色
-    moon_sun_background_color = "#515151"  # 深浅切换按钮背景
-```
-
-#### 浅色模式
+#### Sidebar Colors
 
 ```toml
 [params]
-    text_color = "#222"             # 文字色
-    content_bg_color = "#FAF9F6"    # 内容背景
-    post_title_color = "#303030"    # 标题色
-    list_color = "#5a5a5a"          # 列表色
-    link_color = "#268bd2"          # 链接色
-    date_color = "#515151"          # 日期色
-    table_border_color = "#E5E5E5"  # 表格边框
-    table_stripe_color = "#F9F9F9"  # 表格条纹
+    sidebar_bg_color = "#202020"           # Background color
+    sidebar_img_border_color = "#515151"   # Avatar border color
+    sidebar_p_color = "#909090"            # Description text color
+    sidebar_h1_color = "#FFF"              # Title color
+    sidebar_a_color = "#FFF"               # Link color
+    sidebar_socials_color = "#FFF"         # Social icons color
+    moon_sun_color = "#FFF"                # Dark/Light toggle button color
+    moon_sun_background_color = "#515151"  # Dark/Light toggle button background
 ```
 
-#### 深色模式
+#### Light Mode
 
 ```toml
 [params]
-    text_color_dark = "#eee"            # 文字色
-    content_bg_color_dark = "#121212"   # 内容背景
-    post_title_color_dark = "#DBE2E9"   # 标题色
-    list_color_dark = "#9d9d9d"         # 列表色
-    link_color_dark = "#268bd2"         # 链接色
-    date_color_dark = "#9a9a9a"         # 日期色
-    table_border_color_dark = "#515151" # 表格边框
-    table_stripe_color_dark = "#202020" # 表格条纹
+    text_color = "#222"             # Text color
+    content_bg_color = "#FAF9F6"    # Content background
+    post_title_color = "#303030"    # Title color
+    list_color = "#5a5a5a"          # List color
+    link_color = "#268bd2"          # Link color
+    date_color = "#515151"          # Date color
+    table_border_color = "#E5E5E5"  # Table border
+    table_stripe_color = "#F9F9F9"  # Table stripe
 ```
 
-### 分类配置
+#### Dark Mode
+
+```toml
+[params]
+    text_color_dark = "#eee"            # Text color
+    content_bg_color_dark = "#121212"   # Content background
+    post_title_color_dark = "#DBE2E9"   # Title color
+    list_color_dark = "#9d9d9d"         # List color
+    link_color_dark = "#268bd2"         # Link color
+    date_color_dark = "#9a9a9a"         # Date color
+    table_border_color_dark = "#515151" # Table border
+    table_stripe_color_dark = "#202020" # Table stripe
+```
+
+### Taxonomy Configuration
 
 ```toml
 [taxonomies]
@@ -168,60 +171,60 @@ name = "Your Name"
     home = ["HTML", "RSS", "JSON"]
 ```
 
-## 📁 目录结构
+## 📁 Directory Structure
 
 ```
 kong-htop/
-├── layouts/                    # 主题模板
-│   ├── _default/              # 默认模板
-│   │   ├── baseof.html        # 基础模板
-│   │   ├── list.html          # 列表页模板
-│   │   ├── single.html        # 单页面模板
-│   │   └── index.json         # JSON 输出
-│   ├── posts/                 # 文章相关
-│   │   └── list.html          # 文章列表页
-│   ├── categories/            # 分类相关
-│   │   ├── list.html          # 分类列表
-│   │   └── terms.html         # 分类标签云
-│   ├── tags/                  # 标签相关
-│   │   ├── list.html          # 标签列表
-│   │   └── terms.html         # 标签云
-│   ├── search/                # 搜索页面
-│   │   └── list.html          # 搜索结果
-│   └── partials/              # 可复用组件
-│       ├── head/              # 头部组件
-│       ├── post/              # 文章组件
-│       └── sidebar/           # 侧边栏组件
-├── assets/                    # 静态资源
-│   ├── css/                   # 样式表
-│   │   ├── poison.css         # 主样式
-│   │   ├── custom.css         # 自定义样式（2800+ 行优化）
-│   │   └── lib/               # 第三方库
+├── layouts/                    # Theme templates
+│   ├── _default/              # Default templates
+│   │   ├── baseof.html        # Base template
+│   │   ├── list.html          # List page template
+│   │   ├── single.html        # Single page template
+│   │   └── index.json         # JSON output
+│   ├── posts/                 # Post related
+│   │   └── list.html          # Post list page
+│   ├── categories/            # Categories related
+│   │   ├── list.html          # Category list
+│   │   └── terms.html         # Category tag cloud
+│   ├── tags/                  # Tags related
+│   │   ├── list.html          # Tag list
+│   │   └── terms.html         # Tag cloud
+│   ├── search/                # Search page
+│   │   └── list.html          # Search results
+│   └── partials/              # Reusable components
+│       ├── head/              # Header components
+│       ├── post/              # Post components
+│       └── sidebar/           # Sidebar components
+├── assets/                    # Static assets
+│   ├── css/                   # Stylesheets
+│   │   ├── poison.css         # Main styles
+│   │   ├── custom.css         # Custom styles (2800+ lines optimized)
+│   │   └── lib/               # Third-party libraries
 │   └── js/                    # JavaScript
-│       ├── light_dark.js      # 深浅模式切换
-│       ├── search.js          # 搜索功能
-│       ├── back_to_top.js     # 返回顶部
-│       └── lib/               # 第三方库
-├── static/                    # 静态文件
-│   ├── fonts/                 # 字体文件
-│   ├── icons/                 # 图标资源
-│   └── katex/                 # KaTeX 数学库
-├── archetypes/                # 内容模板
-│   └── default.md             # 默认文章模板
-├── exampleSite/               # 示例网站
-│   ├── hugo.toml              # 配置示例
-│   ├── content/               # 示例内容
-│   └── static/                # 示例静态文件
-├── theme.toml                 # 主题配置
-├── LICENSE                    # 许可证
-└── README.md                  # 本文档
+│       ├── light_dark.js      # Dark/Light mode toggle
+│       ├── search.js          # Search functionality
+│       ├── back_to_top.js     # Back to top
+│       └── lib/               # Third-party libraries
+├── static/                    # Static files
+│   ├── fonts/                 # Font files
+│   ├── icons/                 # Icon resources
+│   └── katex/                 # KaTeX math library
+├── archetypes/                # Content templates
+│   └── default.md             # Default article template
+├── exampleSite/               # Example site
+│   ├── hugo.toml              # Configuration example
+│   ├── content/               # Sample content
+│   └── static/                # Sample static files
+├── theme.toml                 # Theme configuration
+├── LICENSE                    # License
+└── README.md                  # This document
 ```
 
-## 🎨 设计特色
+## 🎨 Design Features
 
-### 毛玻璃效果（Glassmorphism）
+### Glassmorphism Effect
 
-主题采用现代的毛玻璃设计元素：
+The theme uses modern glassmorphism design elements:
 
 ```css
 background: rgba(255, 255, 255, 0.08);
@@ -230,129 +233,129 @@ backdrop-filter: blur(10px);
 border: 1px solid rgba(255, 255, 255, 0.15);
 ```
 
-### 流畅动画
+### Smooth Animations
 
-所有交互都有精心设计的动画：
+All interactions feature carefully designed animations:
 
-- 平滑的 CSS 过渡
-- GPU 加速的 transform 动画
-- 悬停效果和按压反馈
+- Smooth CSS transitions
+- GPU-accelerated transform animations
+- Hover effects and press feedback
 
-### 响应式设计
+### Responsive Design
 
-三个响应式断点：
+Three responsive breakpoints:
 
-- **手机端** (< 768px): 单列布局
-- **平板端** (768px - 1024px): 灵活布局
-- **桌面端** (> 1024px): 完整效果
+- **Mobile** (< 768px): Single column layout
+- **Tablet** (768px - 1024px): Flexible layout
+- **Desktop** (> 1024px): Full effect
 
-## 🔧 高级用法
+## 🔧 Advanced Usage
 
-### 自定义样式
+### Custom Styles
 
-在您的网站项目中创建 `assets/css/custom.css` 覆盖主题样式：
+Create `assets/css/custom.css` in your website project to override theme styles:
 
 ```css
-/* 自定义链接颜色 */
+/* Custom link color */
 .content a {
     color: #your-color;
 }
 ```
 
-### 自定义模板
+### Custom Templates
 
-在您的项目中创建相同路径的模板文件来覆盖主题模板：
+Create template files with the same path in your project to override theme templates:
 
 ```
 content/
 ├── layouts/
 │   └── posts/
-│       └── single.html        # 覆盖文章详情页模板
+│       └── single.html        # Override article detail page template
 ```
 
-### 文章元数据
+### Article Front Matter
 
-完整的前置元数据示例：
+Complete front matter example:
 
 ```markdown
 ---
-title: "文章标题"
+title: "Article Title"
 date: 2024-01-15
-description: "文章描述"
-tags: ["标签1", "标签2"]
-categories: ["分类1"]
-series: ["系列名称"]
+description: "Article description"
+tags: ["tag1", "tag2"]
+categories: ["category1"]
+series: ["series-name"]
 image: "cover-image.jpg"
 ---
 ```
 
-## 📖 CSS 结构
+## 📖 CSS Structure
 
-### custom.css 包含的功能模块
+### custom.css Functional Modules
 
-1. **滚动条样式** (≈150 行)
-   - Firefox 和 Webkit 兼容
-   - 深色/浅色模式自适应
+1. **Scrollbar Styling** (≈150 lines)
+   - Firefox and Webkit compatible
+   - Dark/Light mode adaptive
 
-2. **移动端优化** (≈500 行)
-   - 响应式断点
-   - 触摸友好
-   - 紧凑布局
+2. **Mobile Optimization** (≈500 lines)
+   - Responsive breakpoints
+   - Touch-friendly
+   - Compact layout
 
-3. **代码块美化** (≈150 行)
-   - 一键复制功能
-   - 行号显示
-   - 水平滚动提示
+3. **Code Block Enhancement** (≈150 lines)
+   - One-click copy functionality
+   - Line numbers display
+   - Horizontal scroll indicator
 
-4. **表格响应式** (≈100 行)
-   - 移动端适配
-   - 可滚动表格
+4. **Responsive Tables** (≈100 lines)
+   - Mobile adaptation
+   - Scrollable tables
 
-5. **标签云** (≈300 行)
-   - 毛玻璃效果
-   - 动态字体大小
-   - 悬停动画
+5. **Tag Cloud** (≈300 lines)
+   - Glassmorphism effect
+   - Dynamic font sizes
+   - Hover animations
 
-6. **文章列表** (≈350 行)
-   - 按年份分组
-   - 紧凑布局
-   - 日期徽章
+6. **Article List** (≈350 lines)
+   - Grouped by year
+   - Compact layout
+   - Date badges
 
-7. **文章详情页** (≈500 行)
-   - 现代卡片布局
-   - 毛玻璃效果
-   - 优化排版
+7. **Article Detail Page** (≈500 lines)
+   - Modern card layout
+   - Glassmorphism effect
+   - Optimized typography
 
-8. **侧边栏** (≈300 行)
-   - 毛玻璃背景
-   - 菜单动画
-   - 社交图标
+8. **Sidebar** (≈300 lines)
+   - Glassmorphism background
+   - Menu animations
+   - Social icons
 
-9. **搜索页面** (≈400 行)
-   - 搜索框样式
-   - 结果展示
-   - 高亮匹配
+9. **Search Page** (≈400 lines)
+   - Search box styling
+   - Result display
+   - Highlight matches
 
-总计：**2800+ 行**优化 CSS
+Total: **2800+ lines** of optimized CSS
 
-## 🌓 深色模式
+## 🌓 Dark Mode
 
-主题提供完整的深色模式支持：
+The theme provides complete dark mode support:
 
-- ✅ 自动检测系统主题偏好
-- ✅ 手动切换按钮在侧边栏
-- ✅ 所有组件完美适配
-- ✅ 平滑的过渡动画
+- ✅ Automatic system theme detection
+- ✅ Manual toggle button in sidebar
+- ✅ All components perfectly adapted
+- ✅ Smooth transition animations
 
-## 🚀 性能优化
+## 🚀 Performance Optimization
 
-- **CSS** 优化的选择器，避免重排和重绘
-- **GPU 加速** 使用 transform 和 opacity 属性
-- **代码分割** 按需加载 KaTeX 等库
-- **图片优化** 自动应用懒加载
-- **缓存策略** 利用浏览器缓存
+- **CSS** Optimized selectors avoiding repaints and reflows
+- **GPU Acceleration** Using transform and opacity properties
+- **Code Splitting** On-demand loading of KaTeX and other libraries
+- **Image Optimization** Automatic lazy loading applied
+- **Caching Strategy** Leveraging browser cache
 
-## 📱 兼容性
+## 📱 Browser Compatibility
 
 - ✅ Chrome/Edge 90+
 - ✅ Firefox 88+
@@ -360,35 +363,35 @@ image: "cover-image.jpg"
 - ✅ iOS Safari 12+
 - ✅ Android Chrome
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交问题和拉取请求！
+Issues and pull requests are welcome!
 
-## 📄 许可证
+## 📄 License
 
-本主题采用 GPL-3.0 许可证，基于 [Poison](https://github.com/lukeorth/poison) 主题。
+This theme is licensed under GPL-3.0, based on the [Poison](https://github.com/lukeorth/poison) theme.
 
-关于原始 Poison 主题，请参考：
-- 原作者：Luke Orth
-- 原始设计灵感：[Hyde](https://github.com/mdo/hyde)
+For the original Poison theme, please see:
+- Original Author: Luke Orth
+- Original Design Inspiration: [Hyde](https://github.com/mdo/hyde)
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-感谢：
-- [Poison](https://github.com/lukeorth/poison) 主题的优秀基础
-- Hugo 社区的支持
-- 所有贡献者和使用者
+Thanks to:
+- Excellent foundation of [Poison](https://github.com/lukeorth/poison) theme
+- Support from Hugo community
+- All contributors and users
 
-## 📞 支持
+## 📞 Support
 
-遇到问题？
+Encountering issues?
 
-1. 查看 [示例网站](exampleSite/)
-2. 提交 [GitHub Issues](https://github.com/yezihack/kong-htop/issues)
-3. 检查 [Hugo 文档](https://gohugo.io/)
+1. Check the [Example Site](exampleSite/)
+2. Submit [GitHub Issues](https://github.com/yezihack/kong-htop/issues)
+3. Review [Hugo Documentation](https://gohugo.io/)
 
 ---
 
-**制作者**: Yezihack  
-**开源时间**: 2025  
-**版本**: 1.0.0
+**Created by**: Yezihack  
+**Open Source Date**: 2025  
+**Version**: 1.0.0
