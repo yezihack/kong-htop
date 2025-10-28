@@ -10,7 +10,7 @@ min_version = "0.101.0"
 
 [author]
     name = "Yezihack"
-    homepage = "https://github.com/yezihack"
+    homepage = "https://yezihack.github.io/"
 
 # If Porting existing theme
 [original]

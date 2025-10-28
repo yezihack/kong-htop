@@ -5,6 +5,10 @@ theme = "../.."
 paginate = 10
 pluralizelisttitles = false
 
+# Enable multilingual mode, options: zh,en,ja
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
 [Author]
 name = "Your Name"
 
@@ -69,3 +73,59 @@ name = "Your Name"
 
 [outputs]
     home = ["HTML", "RSS", "JSON"]
+    section = ["HTML"]
+    page = ["HTML"]
+
+# ============================================
+# Multilingual Configuration / 多言語設定
+# ============================================
+[languages]
+    # English Configuration
+    [languages.en]
+        languageName = "English"
+        languageCode = "en"
+        weight = 1
+        contentDir = "content/en"
+
+        [languages.en.params]
+            menu = [
+                {Name = "About", URL = "/en/about/", HasChildren = false},
+                {Name = "Posts", URL = "/en/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
+                {Name = "Categories", URL = "/en/categories/", HasChildren = false},
+                {Name = "Tags", URL = "/en/tags/", HasChildren = false},
+            ]
+
+    # Chinese Simplified Configuration
+    [languages.zh]
+        languageName = "简体中文"
+        languageCode = "zh-cn"
+        weight = 2
+        contentDir = "content/zh"
+
+        [languages.zh.params]
+            menu = [
+                {Name = "关于", URL = "/zh/about/", HasChildren = false},
+                {Name = "文章", URL = "/zh/posts/", Pre = "最新", HasChildren = true, Limit = 5},
+                {Name = "分类", URL = "/zh/categories/", HasChildren = false},
+                {Name = "标签", URL = "/zh/tags/", HasChildren = false},
+            ]
+
+    # Japanese Configuration
+    [languages.ja]
+        languageName = "日本語"
+        languageCode = "ja"
+        weight = 3
+        contentDir = "content/ja"
+
+        [languages.ja.params]
+            menu = [
+                {Name = "について", URL = "/ja/about/", HasChildren = false},
+                {Name = "記事", URL = "/ja/posts/", Pre = "最新", HasChildren = true, Limit = 5},
+                {Name = "カテゴリ", URL = "/ja/categories/", HasChildren = false},
+                {Name = "タグ", URL = "/ja/tags/", HasChildren = false},
+            ]
+
+# Search page output configuration
+[outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "index"
