@@ -140,8 +140,8 @@ This theme has been optimized for:
 
 ## 🔗 Useful Links
 
-- [Full Documentation](../../README.md)
-- [Quick Start Guide](../../GETTING_STARTED.md)
+- [Full Documentation](https://github.com/yezihack/kong-htop/)
+- [Quick Start Guide](https://github.com/yezihack/kong-htop/blob/main/GETTING_STARTED.md)
 - [Kong-Htop GitHub](https://github.com/yezihack/kong-htop)
 - [Hugo Official Website](https://gohugo.io/)
 
@@ -159,3 +159,4 @@ You're now ready to start writing! Enjoy using the Kong-Htop theme.
 ---
 
 **Need Help?** Check [GitHub Issues](https://github.com/yezihack/kong-htop/issues) or [Hugo Documentation](https://gohugo.io/documentation/).
+

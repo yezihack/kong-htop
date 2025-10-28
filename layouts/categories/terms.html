@@ -3,15 +3,15 @@
     <h1 class="taxonomy-title">{{ .Title }}</h1>
 
     <p class="taxonomy-description">
-        共 <span class="taxonomy-count">{{ len .Data.Terms }}</span> 个分类，
-        <span class="taxonomy-count">{{ len .Site.RegularPages }}</span> 篇文章
+        <span class="taxonomy-count">{{ len .Data.Terms }}</span> categories,
+        <span class="taxonomy-count">{{ len .Site.RegularPages }}</span> articles
     </p>
 
     <div class="tag-cloud-container">
         {{ $maxCount := 0 }}
         {{ $minCount := 999999 }}
 
-        <!-- 计算最大和最小文章数 -->
+        <!-- Calculate max and min article counts -->
         {{ range $name, $taxonomy := .Data.Terms }}
             {{ $count := len $taxonomy.Pages }}
             {{ if gt $count $maxCount }}
@@ -22,21 +22,21 @@
             {{ end }}
         {{ end }}
 
-        <!-- 显示所有分类标签 -->
+        <!-- Show all category tags -->
         {{ range .Data.Terms.Alphabetical }}
             {{ $count := .Count }}
             {{ $name := .Page.Title }}
 
-            <!-- 计算权重：根据文章数量计算字体大小 -->
+            <!-- Calculate weight: font size based on article count -->
             {{ $weight := 1.0 }}
             {{ if gt $maxCount $minCount }}
                 {{ $weight = div (sub $count $minCount | float) (sub $maxCount $minCount | float) }}
             {{ end }}
 
-            <!-- 字体大小范围：0.85em - 2em -->
+            <!-- Font size range: 0.85em - 2em -->
             {{ $fontSize := add 0.85 (mul $weight 1.15) }}
 
-            <!-- 计算颜色深度 -->
+            <!-- Calculate color depth -->
             {{ $colorWeight := mul $weight 100 | int }}
 
             <a href="{{ .Page.Permalink }}"
@@ -44,7 +44,7 @@
                style="font-size: {{ $fontSize }}em"
                data-count="{{ $count }}"
                data-weight="{{ $colorWeight }}"
-               title="{{ $name }} ({{ $count }} 篇文章)">
+               title="{{ $name }} ({{ $count }} articles)">
                 <span class="tag-name">{{ $name }}</span>
                 <span class="tag-count">{{ $count }}</span>
             </a>

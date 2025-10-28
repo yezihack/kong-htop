@@ -1,100 +1,58 @@
-# 更新日志
+# Changelog
 
-所有值得注意的变化将记录在此文件中。
+All notable changes to Kong-Htop theme will be documented in this file.
 
-## [1.0.0] - 2025-10-22
+## [1.0.0] - 2025-10-28
 
-### ✨ 新特性
+### Added
+- ✨ Modern glassmorphism design style
+- 🌓 Full dark mode support with automatic switching
+- 📱 Fully responsive design (mobile, tablet, desktop)
+- 🔍 Local search functionality with JSON-based indexing
+- 🏷️ Dynamic tag cloud with hover effects
+- 📝 Timeline view for posts grouped by year
+- 🎲 Random post feature
+- 📚 Auto-generated table of contents
+- ⚡ GPU-accelerated animations
+- 📖 KaTeX support for math formulas
+- 💬 Enhanced code blocks with one-click copy
+- 🌍 Multilingual example content (7 languages)
 
-- 🎨 现代毛玻璃设计（Glassmorphism）
-- 🌓 完整的深色/浅色模式支持
-- 📱 完全响应式设计，支持桌面、平板、手机
-- 🏷️ 现代标签云，动态字体大小和悬停动画
-- 📝 文章时间线 - 按年份分组的紧凑列表
-- 🔍 本地全文搜索（JSON 基础）
-- 📚 自动生成文章目录侧栏
-- 🎯 完整的系列文章支持
-- 📊 文章统计信息（阅读次数、访问量）
-- ⚡ GPU 加速的流畅动画
-- 📖 KaTeX 数学公式支持
-- 💬 代码块一键复制功能
+### Features
+- Custom color schemes for light and dark modes
+- Flexible menu configuration
+- Social media integration
+- RSS feed support
+- SEO optimized
+- Performance optimized CSS (2800+ lines)
+- Customizable sidebar
+- Category and tag pages
+- Series support for articles
+- Article statistics
 
-### 🎨 设计优化
+### Documentation
+- 📚 Comprehensive README in English and Chinese
+- 🚀 Quick start guide
+- 📝 Example site with full configuration
+- 🌐 Multilingual post examples
+- 🔧 Technical documentation in `docs/` directory
 
-- ✅ 统一的毛玻璃效果设计语言
-- ✅ 精心设计的悬停和交互动画
-- ✅ 优化的响应式断点（手机、平板、桌面）
-- ✅ 所有组件的深色模式适配
-- ✅ 优化的颜色对比度和可读性
-
-### 📖 CSS 优化
-
-- **2800+ 行**自定义 CSS
-- 优化的选择器，避免重排和重绘
-- GPU 加速的动画
-- 完整的浏览器兼容性降级方案
-
-### 🛠️ 配置灵活性
-
-- 可配置的所有颜色
-- 灵活的菜单系统
-- 社交媒体链接
-- 自定义分类和标签
-- RSS 订阅支持
-
-### 📚 文档
-
-- 完整的 README 文档
-- 快速入门指南（GETTING_STARTED.md）
-- 示例网站（exampleSite）
-- 示例配置文件
-- 详细的注释代码
-
-### ✅ 浏览器支持
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- iOS Safari 12+
-- Android Chrome
+### Based On
+- Poison theme by Luke Orth
+- Hyde design inspiration
 
 ---
 
-## 发布说明
+## Version Notes
 
-### 基础
+**Version**: 1.0.0  
+**Release Date**: 2025-10-28  
+**License**: GPL-3.0  
+**Minimum Hugo Version**: 0.101.0+
 
-这个版本 v1.0.0 是 Kong-Htop 主题的首个稳定版本，是基于 Poison 主题的深度定制。
+## Links
 
-### 主要改进
-
-1. **视觉设计** - 从传统列表风格升级到现代毛玻璃设计
-2. **性能** - 2800+ 行优化 CSS，GPU 加速动画
-3. **用户体验** - 完整的响应式设计和深色模式支持
-4. **功能** - 新增搜索、标签云、时间线等功能
-5. **文档** - 详细的使用说明和示例
-
-### 致谢
-
-- 基于 [Poison](https://github.com/lukeorth/poison) 主题
-- 灵感来自 [Hyde](https://github.com/mdo/hyde) 设计
-- Hugo 社区支持
-
----
-
-## 版本计划
-
-### 未来版本
-
-- [ ] 多语言支持
-- [ ] 评论系统集成
-- [ ] 更多色彩主题
-- [ ] 社交分享按钮
-- [ ] 阅读时间估计
-- [ ] 相关文章推荐
-
----
-
-**更新时间**: 2025-10-22
-**维护者**: Yezihack  
-**许可证**: GPL-3.0
+- [Repository](https://github.com/yezihack/kong-htop)
+- [Documentation](README.md)
+- [Example Site](exampleSite/)
+- [Issues](https://github.com/yezihack/kong-htop/issues)

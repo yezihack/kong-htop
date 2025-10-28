@@ -5,59 +5,36 @@
 
 **[English](./README.md) | [简体中文](./README.cn.md)**
 
-> An elegant and modern Hugo theme featuring glassmorphism design, deeply customized based on the Poison theme.
+> An elegant and modern Hugo theme featuring glassmorphism design, based on Poison theme.
 
 ![Kong-Htop Theme](https://cdn.jsdelivr.net/gh/yezihack/assets/b/20251022154715.png)
 
 ## ✨ Features
 
-- 🎨 **Modern Glassmorphism Design** - glassmorphism UI design style
-- 🌓 **Full Dark Mode Support** - automatic switching with deep adaptation
-- 📱 **Responsive Design** - perfect support for desktop, tablet, and mobile
-- 🏷️ **Tag Cloud** - modern tags and category pages
-- 📝 **Article Timeline** - compact list grouped by year
-- 🔍 **Search Function** - full-text local search (JSON-based)
-- 📚 **Table of Contents** - automatically generated article sidebar navigation
-- 🎲 **Random Articles** - randomly display articles
-- 🎯 **Series Articles** - support for article series management
-- 🔢 **Article Statistics** - view counts, traffic stats, etc.
-- ⚡ **High Performance** - GPU-accelerated animations, optimized CSS selectors
-- 📖 **KaTeX Support** - mathematical formula rendering
-- 💬 **Code Block Enhancements** - one-click copy, line numbers display
+- 🎨 **Glassmorphism Design** - Modern frosted glass UI style
+- 🌓 **Dark Mode** - Automatic theme switching with deep adaptation
+- 📱 **Fully Responsive** - Perfect on desktop, tablet, and mobile
+- 🔍 **Local Search** - Fast full-text search powered by JSON
+- 🏷️ **Tag Cloud** - Dynamic tag visualization with hover effects
+- 📝 **Timeline View** - Posts organized by year
+- 🎲 **Random Posts** - Discover content randomly
+- ⚡ **High Performance** - GPU-accelerated animations, optimized CSS
+- 📖 **KaTeX Support** - Beautiful math formulas
+- 💬 **Code Enhancements** - One-click copy, line numbers
 
 ## 🚀 Quick Start
 
-### Install Theme
-
-#### Method 1: As a Git Submodule (Recommended)
+### 1. Install Theme
 
 ```bash
-git clone https://github.com/your-blog/my-blog.git
-cd my-blog
+# Add as Git submodule (recommended)
 git submodule add https://github.com/yezihack/kong-htop.git themes/kong-htop
-```
 
-#### Method 2: Direct Clone
-
-```bash
-git clone https://github.com/your-blog/my-blog.git
-cd my-blog
+# Or clone directly
 git clone https://github.com/yezihack/kong-htop.git themes/kong-htop
 ```
 
-#### Method 3: Download ZIP
-
-Download the latest version from [Releases](https://github.com/yezihack/kong-htop/releases) and extract it to the `themes/kong-htop` directory.
-
-### Configure Hugo
-
-Update your `hugo.toml` file:
-
-```toml
-theme = "kong-htop"
-```
-
-### Quick Configuration
+### 2. Configure
 
 Copy the example configuration:
 
@@ -65,303 +42,182 @@ Copy the example configuration:
 cp themes/kong-htop/exampleSite/hugo.toml ./
 ```
 
-Then modify the configuration file according to your needs.
-
-## 📋 Configuration Guide
-
-### Basic Configuration
+Edit `hugo.toml` with your site information:
 
 ```toml
-baseURL = 'https://your-site.com/'
-languageCode = 'en'
-title = "Your Blog Title"
+baseURL = 'https://your-domain.com/'
+title = "Your Blog"
 theme = "kong-htop"
-paginate = 10
 
 [Author]
 name = "Your Name"
+
+[params]
+    brand = "Your Blog"
+    description = "Your blog description"
 ```
 
-### Site Parameters
+### 3. Create Content
+
+```bash
+# Create your first post
+hugo new posts/hello-world.md
+
+# Create about page
+hugo new about/_index.md
+```
+
+### 4. Preview
+
+```bash
+hugo server
+```
+
+Visit `http://localhost:1313` 🎉
+
+## 📝 Writing Posts
+
+Create posts with:
+
+```bash
+hugo new posts/my-post.md
+```
+
+Front matter example:
+
+```yaml
+---
+title: "Post Title"
+date: 2024-01-15
+description: "Brief description"
+tags: ["tag1", "tag2"]
+categories: ["category"]
+---
+
+Your content here...
+```
+
+## 🎨 Customization
+
+### Colors
+
+Edit `hugo.toml`:
 
 ```toml
 [params]
-    # Branding settings
-    title = "Your Blog Title"
-    brand = "Brand Name"
-    brand_image = "/images/logo.png"
-    og_image = "/images/og-image.png"
-    favicon = "/images/favicon.png"
-    
-    # Site description
-    description = "Your site description"
+    # Light mode
+    link_color = "#268bd2"
+    text_color = "#222"
     
     # Dark mode
-    dark_mode = true
-    
-    # Main content sections
-    mainSections = ["posts"]
-    
-    # Menu configuration
+    link_color_dark = "#268bd2"
+    text_color_dark = "#eee"
+```
+
+### Menu
+
+```toml
+[params]
     menu = [
-        {Name = "About", URL = "/about/", HasChildren = false},
+        {Name = "Home", URL = "/", HasChildren = false},
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
-        {Name = "Categories", URL = "/categories/", HasChildren = false},
-        {Name = "Tags", URL = "/tags/", HasChildren = false},
+        {Name = "About", URL = "/about/", HasChildren = false},
     ]
-    
-    # RSS configuration
-    rss_icon = true
-    rss_section = "posts"
 ```
 
-### Color Customization
-
-#### Sidebar Colors
+### Social Links
 
 ```toml
 [params]
-    sidebar_bg_color = "#202020"           # Background color
-    sidebar_img_border_color = "#515151"   # Avatar border color
-    sidebar_p_color = "#909090"            # Description text color
-    sidebar_h1_color = "#FFF"              # Title color
-    sidebar_a_color = "#FFF"               # Link color
-    sidebar_socials_color = "#FFF"         # Social icons color
-    moon_sun_color = "#FFF"                # Dark/Light toggle button color
-    moon_sun_background_color = "#515151"  # Dark/Light toggle button background
+    github_url = "https://github.com/username"
+    twitter_url = "https://twitter.com/handle"
 ```
 
-#### Light Mode
-
-```toml
-[params]
-    text_color = "#222"             # Text color
-    content_bg_color = "#FAF9F6"    # Content background
-    post_title_color = "#303030"    # Title color
-    list_color = "#5a5a5a"          # List color
-    link_color = "#268bd2"          # Link color
-    date_color = "#515151"          # Date color
-    table_border_color = "#E5E5E5"  # Table border
-    table_stripe_color = "#F9F9F9"  # Table stripe
-```
-
-#### Dark Mode
-
-```toml
-[params]
-    text_color_dark = "#eee"            # Text color
-    content_bg_color_dark = "#121212"   # Content background
-    post_title_color_dark = "#DBE2E9"   # Title color
-    list_color_dark = "#9d9d9d"         # List color
-    link_color_dark = "#268bd2"         # Link color
-    date_color_dark = "#9a9a9a"         # Date color
-    table_border_color_dark = "#515151" # Table border
-    table_stripe_color_dark = "#202020" # Table stripe
-```
-
-### Taxonomy Configuration
-
-```toml
-[taxonomies]
-    series = 'series'
-    tags = 'tags'
-    categories = 'categories'
-
-[outputs]
-    home = ["HTML", "RSS", "JSON"]
-```
-
-## 📁 Directory Structure
+## 📁 Project Structure
 
 ```
-kong-htop/
-├── layouts/                    # Theme templates
-│   ├── _default/              # Default templates
-│   │   ├── baseof.html        # Base template
-│   │   ├── list.html          # List page template
-│   │   ├── single.html        # Single page template
-│   │   └── index.json         # JSON output
-│   ├── posts/                 # Post related
-│   │   └── list.html          # Post list page
-│   ├── categories/            # Categories related
-│   │   ├── list.html          # Category list
-│   │   └── terms.html         # Category tag cloud
-│   ├── tags/                  # Tags related
-│   │   ├── list.html          # Tag list
-│   │   └── terms.html         # Tag cloud
-│   ├── search/                # Search page
-│   │   └── list.html          # Search results
-│   └── partials/              # Reusable components
-│       ├── head/              # Header components
-│       ├── post/              # Post components
-│       └── sidebar/           # Sidebar components
-├── assets/                    # Static assets
-│   ├── css/                   # Stylesheets
-│   │   ├── poison.css         # Main styles
-│   │   ├── custom.css         # Custom styles (2800+ lines optimized)
-│   │   └── lib/               # Third-party libraries
-│   └── js/                    # JavaScript
-│       ├── light_dark.js      # Dark/Light mode toggle
-│       ├── search.js          # Search functionality
-│       ├── back_to_top.js     # Back to top
-│       └── lib/               # Third-party libraries
-├── static/                    # Static files
-│   ├── fonts/                 # Font files
-│   ├── icons/                 # Icon resources
-│   └── katex/                 # KaTeX math library
-├── archetypes/                # Content templates
-│   └── default.md             # Default article template
-├── exampleSite/               # Example site
-│   ├── hugo.toml              # Configuration example
-│   ├── content/               # Sample content
-│   └── static/                # Sample static files
-├── theme.toml                 # Theme configuration
-├── LICENSE                    # License
-└── README.md                  # This document
+your-site/
+├── content/
+│   ├── posts/          # Blog posts
+│   └── about/          # About page
+├── static/
+│   └── images/         # Images
+├── themes/
+│   └── kong-htop/      # This theme
+└── hugo.toml           # Configuration
 ```
 
-## 🎨 Design Features
+## 🌍 Multilingual Support
 
-### Glassmorphism Effect
+The example site includes posts in 7 languages:
 
-The theme uses modern glassmorphism design elements:
+- 🇬🇧 English, 🇨🇳 Chinese, 🇯🇵 Japanese, 🇰🇷 Korean
+- 🇩🇪 German, 🇫🇷 French, 🇪🇸 Spanish
 
-```css
-background: rgba(255, 255, 255, 0.08);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.15);
-```
+See `exampleSite/content/posts/` for examples.
 
-### Smooth Animations
+## 🔧 Advanced Features
 
-All interactions feature carefully designed animations:
+### Search Function
 
-- Smooth CSS transitions
-- GPU-accelerated transform animations
-- Hover effects and press feedback
-
-### Responsive Design
-
-Three responsive breakpoints:
-
-- **Mobile** (< 768px): Single column layout
-- **Tablet** (768px - 1024px): Flexible layout
-- **Desktop** (> 1024px): Full effect
-
-## 🔧 Advanced Usage
-
-### Custom Styles
-
-Create `assets/css/custom.css` in your website project to override theme styles:
-
-```css
-/* Custom link color */
-.content a {
-    color: #your-color;
-}
-```
-
-### Custom Templates
-
-Create template files with the same path in your project to override theme templates:
-
-```
-content/
-├── layouts/
-│   └── posts/
-│       └── single.html        # Override article detail page template
-```
-
-### Article Front Matter
-
-Complete front matter example:
+Search is automatically enabled. Just create:
 
 ```markdown
 ---
-title: "Article Title"
-date: 2024-01-15
-description: "Article description"
-tags: ["tag1", "tag2"]
-categories: ["category1"]
-series: ["series-name"]
-image: "cover-image.jpg"
+title: "Search"
+slug: "search"
+outputs: ["html", "json"]
 ---
 ```
 
-## 📖 CSS Structure
+Save as `content/search/_index.md`.
 
-### custom.css Functional Modules
+### Math Formulas
 
-1. **Scrollbar Styling** (≈150 lines)
-   - Firefox and Webkit compatible
-   - Dark/Light mode adaptive
+Use KaTeX for math:
 
-2. **Mobile Optimization** (≈500 lines)
-   - Responsive breakpoints
-   - Touch-friendly
-   - Compact layout
+```markdown
+Inline: $E = mc^2$
 
-3. **Code Block Enhancement** (≈150 lines)
-   - One-click copy functionality
-   - Line numbers display
-   - Horizontal scroll indicator
+Block:
+$$
+\int_{a}^{b} f(x) dx
+$$
+```
 
-4. **Responsive Tables** (≈100 lines)
-   - Mobile adaptation
-   - Scrollable tables
+### Code Blocks
 
-5. **Tag Cloud** (≈300 lines)
-   - Glassmorphism effect
-   - Dynamic font sizes
-   - Hover animations
+Syntax highlighting with copy button:
 
-6. **Article List** (≈350 lines)
-   - Grouped by year
-   - Compact layout
-   - Date badges
+````markdown
+```go
+package main
 
-7. **Article Detail Page** (≈500 lines)
-   - Modern card layout
-   - Glassmorphism effect
-   - Optimized typography
+func main() {
+    println("Hello!")
+}
+```
+````
 
-8. **Sidebar** (≈300 lines)
-   - Glassmorphism background
-   - Menu animations
-   - Social icons
+## 🚢 Deployment
 
-9. **Search Page** (≈400 lines)
-   - Search box styling
-   - Result display
-   - Highlight matches
+Build your site:
 
-Total: **2800+ lines** of optimized CSS
+```bash
+hugo --minify
+```
 
-## 🌓 Dark Mode
+Deploy the `public/` folder to:
+- **GitHub Pages**
+- **Netlify**
+- **Vercel**
+- **Your own server**
 
-The theme provides complete dark mode support:
+## 📖 Documentation
 
-- ✅ Automatic system theme detection
-- ✅ Manual toggle button in sidebar
-- ✅ All components perfectly adapted
-- ✅ Smooth transition animations
-
-## 🚀 Performance Optimization
-
-- **CSS** Optimized selectors avoiding repaints and reflows
-- **GPU Acceleration** Using transform and opacity properties
-- **Code Splitting** On-demand loading of KaTeX and other libraries
-- **Image Optimization** Automatic lazy loading applied
-- **Caching Strategy** Leveraging browser cache
-
-## 📱 Browser Compatibility
-
-- ✅ Chrome/Edge 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ iOS Safari 12+
-- ✅ Android Chrome
+- 📚 [Example Site](exampleSite/) - Live demo configuration
+- 🌐 [Multilingual Posts](exampleSite/content/posts/) - 7 language examples
+- ⚙️ [Full Configuration](exampleSite/hugo.toml) - All available options
 
 ## 🤝 Contributing
 
@@ -369,29 +225,21 @@ Issues and pull requests are welcome!
 
 ## 📄 License
 
-This theme is licensed under GPL-3.0, based on the [Poison](https://github.com/lukeorth/poison) theme.
+GPL-3.0 License. Based on [Poison](https://github.com/lukeorth/poison) theme.
 
-For the original Poison theme, please see:
-- Original Author: Luke Orth
-- Original Design Inspiration: [Hyde](https://github.com/mdo/hyde)
+## 🙏 Credits
 
-## 🙏 Acknowledgments
+- [Poison Theme](https://github.com/lukeorth/poison) by Luke Orth
+- [Hyde](https://github.com/mdo/hyde) design inspiration
+- Hugo community
 
-Thanks to:
-- Excellent foundation of [Poison](https://github.com/lukeorth/poison) theme
-- Support from Hugo community
-- All contributors and users
+## 💬 Support
 
-## 📞 Support
-
-Encountering issues?
-
-1. Check the [Example Site](exampleSite/)
-2. Submit [GitHub Issues](https://github.com/yezihack/kong-htop/issues)
-3. Review [Hugo Documentation](https://gohugo.io/)
+- 📖 [Hugo Documentation](https://gohugo.io/documentation/)
+- 🐛 [GitHub Issues](https://github.com/yezihack/kong-htop/issues)
+- 💡 [Discussions](https://github.com/yezihack/kong-htop/discussions)
 
 ---
 
-**Created by**: Yezihack  
-**Open Source Date**: 2025  
+**Created by**: [Yezihack](https://github.com/yezihack)  
 **Version**: 1.0.0

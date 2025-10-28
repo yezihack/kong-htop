@@ -5,35 +5,35 @@
     {{ $pageCount := len .Pages }}
     {{ if gt $pageCount 0 }}
     <p class="posts-description">
-        共 <span class="posts-count">{{ $pageCount }}</span> 篇文章
+        <span class="posts-count">{{ $pageCount }}</span> articles
     </p>
     {{ end }}
 
-    <!-- 按年份分组显示文章 -->
+    <!-- Group articles by year -->
     {{ range .Pages.GroupByDate "2006" }}
         {{ $year := .Key }}
         {{ $yearPages := .Pages }}
         {{ $count := len $yearPages }}
 
         <div class="year-section" data-year="{{ $year }}">
-            <!-- 年份标题 -->
+            <!-- Year header -->
             <div class="year-header">
                 <h2 class="year-title">{{ $year }}</h2>
-                <span class="year-count">{{ $count }} 篇</span>
+                <span class="year-count">{{ $count }} posts</span>
             </div>
 
-            <!-- 该年份的文章列表 - 紧凑列表 -->
+            <!-- Article list for this year - compact list -->
             <ul class="posts-list">
                 {{ range $yearPages }}
                     <li class="post-item">
                         <a href="{{ .RelPermalink }}" class="post-item-link">
-                            <!-- 日期 -->
+                            <!-- Date -->
                             <div class="post-date">{{ .Date.Format "01-02" }}</div>
 
                             <div class="post-title">{{ .Title }}</div>
 
                             <div class="post-meta">
-                                <!-- 标签 -->
+                                <!-- Tags -->
                                 {{ if .Params.tags }}
                                     {{ range first 3 .Params.tags }}
                                         <span class="post-tag">{{ . }}</span>
