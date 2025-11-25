@@ -1,5 +1,5 @@
 name = "Kong-Htop"
-license = "GPL-3.0 License"
+license = "MIT License"
 licenselink = "https://github.com/yezihack/kong-htop/blob/main/LICENSE"
 description = "A modern, elegant Hugo theme with glassmorphism design. Built on Poison with extensive customizations including tagscloud, timeline posts, modern article pages, and comprehensive dark mode support."
 homepage = "https://github.com/yezihack/kong-htop"
@@ -11,9 +11,3 @@ min_version = "0.101.0"
 [author]
     name = "Yezihack"
     homepage = "https://yezihack.github.io/"
-
-# If Porting existing theme
-[original]
-    author = "Luke Orth"
-    homepage = "https://poison.lukeorth.com/"
-    repo = "https://www.github.com/lukeorth/poison"

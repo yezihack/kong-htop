@@ -1,6 +1,5 @@
 # Kong-Htop
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Hugo](https://img.shields.io/badge/Hugo-0.101.0+-179BD7?style=flat&logo=hugo)](https://gohugo.io)
 
 **[English](./README.md) | [简体中文](./README.cn.md)**
@@ -131,6 +130,15 @@ Edit `hugo.toml`:
 [params]
     github_url = "https://github.com/username"
     twitter_url = "https://twitter.com/handle"
+```
+
+### Visitor Statistics (Optional)
+
+Enable Busuanzi visitor counting (disabled by default):
+
+```toml
+[params]
+    busuanzi_enable = true  # Enable page views and visitor statistics
 ```
 
 ## 📁 Project Structure

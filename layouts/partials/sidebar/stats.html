@@ -1,15 +1,17 @@
-<!-- 不蒜子全站统计 -->
+<!-- Busuanzi site statistics (optional) -->
+{{ if .Site.Params.busuanzi_enable }}
 <div class="site-stats">
-    <div class="stats-title">📊 站点统计</div>
+    <div class="stats-title">📊 Site Stats</div>
     <div class="stats-content">
         <div class="stats-row">
-            <span class="stats-label">访问量:</span>
+            <span class="stats-label">Views:</span>
             <span class="stats-value" id="busuanzi_value_site_pv">-</span>
         </div>
         <div class="stats-row">
-            <span class="stats-label">访客数:</span>
+            <span class="stats-label">Visitors:</span>
             <span class="stats-value" id="busuanzi_value_site_uv">-</span>
         </div>
     </div>
 </div>
+{{ end }}
 

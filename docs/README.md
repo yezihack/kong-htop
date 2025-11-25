@@ -12,6 +12,7 @@ This directory contains detailed technical documentation for the Kong-Htop theme
 
 - **[EXAMPLE_SITE.md](EXAMPLE_SITE.md)** - Example site structure and configuration
 - **[SEARCH_PAGE_FIX.md](SEARCH_PAGE_FIX.md)** - How search functionality works
+- **[BUSUANZI_GUIDE.md](BUSUANZI_GUIDE.md)** - Visitor statistics configuration guide
 
 ### Content Management
 
@@ -39,6 +40,7 @@ This directory contains detailed technical documentation for the Kong-Htop theme
 | DOCUMENTATION_GUIDE.md | Documentation navigation | Everyone |
 | EXAMPLE_SITE.md | Example site details | Theme developers |
 | SEARCH_PAGE_FIX.md | Search implementation | Troubleshooting |
+| BUSUANZI_GUIDE.md | Visitor statistics setup | Site owners |
 | MULTILINGUAL_POSTS.md | Multi-language setup | International sites |
 | LINKS_UPDATE.md | Link management | Content maintainers |
 | STRUCTURE.md | File organization | Theme customizers |

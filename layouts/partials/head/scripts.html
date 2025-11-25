@@ -63,6 +63,8 @@
 </script>
 {{ end -}}
 
-{{/* 不蒜子（Busuanzi）访问统计 */}}
+{{/* Busuanzi visitor statistics (optional, disabled by default) */}}
+{{ if .Site.Params.busuanzi_enable }}
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+{{ end -}}
 

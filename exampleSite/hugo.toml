@@ -18,6 +18,10 @@ name = "Your Name"
     description = "A beautiful blog powered by Kong-Htop theme"
     dark_mode = true
     mainSections = ["posts"]
+    
+    # Busuanzi visitor statistics (disabled by default)
+    # Set to true to enable page view and visitor counting
+    busuanzi_enable = false
 
     menu = [
         {Name = "About", URL = "/about/", HasChildren = false},

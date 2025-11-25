@@ -8,22 +8,24 @@
         </time>
     {{ end }}
 
-    <!-- 新增: 文章统计信息 (字数、阅读时间、访问量) -->
+    <!-- Post statistics (word count, reading time, page views) -->
     <div class="post-stats">
         <span class="stat-item">
-            <span class="stat-label">字数:</span>
+            <span class="stat-label">Words:</span>
             <span class="stat-value">{{ .WordCount }}</span>
         </span>
         <span class="stat-separator">·</span>
         <span class="stat-item">
-            <span class="stat-label">阅读:</span>
-            <span class="stat-value">{{ .ReadingTime }} 分钟</span>
+            <span class="stat-label">Reading:</span>
+            <span class="stat-value">{{ .ReadingTime }} min</span>
         </span>
+        {{ if .Site.Params.busuanzi_enable }}
         <span class="stat-separator">·</span>
         <span class="stat-item busuanzi-item">
-            <span class="stat-label">访问:</span>
+            <span class="stat-label">Views:</span>
             <span class="stat-value" id="busuanzi_value_page_pv">-</span>
         </span>
+        {{ end }}
     </div>
 
     <!-- 清除浮动 -->

@@ -2,6 +2,18 @@
 
 All notable changes to Kong-Htop theme will be documented in this file.
 
+## [1.0.1] - 2025-10-28
+
+### Changed
+- 🔧 Busuanzi visitor statistics now optional via `busuanzi_enable` config (disabled by default)
+- 📝 Simplified documentation structure with technical docs moved to `docs/` directory
+- 🌍 Updated all UI text to English for better international support
+
+### Improved
+- 📚 Main README reduced from 400+ to ~200 lines for faster onboarding
+- 📖 Added comprehensive documentation navigation guide
+- 🎯 Clearer separation of basic and advanced topics
+
 ## [1.0.0] - 2025-10-28
 
 ### Added
