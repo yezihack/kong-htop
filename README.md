@@ -233,7 +233,7 @@ Issues and pull requests are welcome!
 
 ## 📄 License
 
-GPL-3.0 License. Based on [Poison](https://github.com/lukeorth/poison) theme.
+MIT License. Based on [Poison](https://github.com/lukeorth/poison) theme.
 
 ## 🙏 Credits
 
