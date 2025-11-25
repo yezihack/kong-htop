@@ -6,7 +6,7 @@
 
 > An elegant and modern Hugo theme featuring glassmorphism design, based on Poison theme.
 
-![Kong-Htop Theme](https://cdn.jsdelivr.net/gh/yezihack/assets/b/20251022154715.png)
+![screenshot.png](https://raw.githubusercontent.com/yezihack/kong-htop/main/images/screenshot.png)
 
 ## ✨ Features
 

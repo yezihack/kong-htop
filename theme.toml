@@ -11,3 +11,8 @@ min_version = "0.101.0"
 [author]
     name = "Yezihack"
     homepage = "https://yezihack.github.io/"
+
+[original]
+  name = "Poison"
+  homepage = "https://poison.lukeorth.com/"
+  repo = "https://github.com/lukeorth/poison"
